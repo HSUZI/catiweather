@@ -30,7 +30,7 @@ public class CatiWeatherOpenHelper extends SQLiteOpenHelper{
     /**
      * Country表建表语句
      * */
-    public static final String  CREATE_COUNTRY = "create table Country ("
+    public static final String  CREATE_COUNTRY = "create table County ("
             + "id integer primary key autoincrement, "
             + "country_name text, "
             + "country_code text, "
