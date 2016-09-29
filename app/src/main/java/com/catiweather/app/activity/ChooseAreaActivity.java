@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Layout;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
@@ -69,12 +70,16 @@ public class ChooseAreaActivity extends AppCompatActivity {
         lv_view.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Log.e("CatiWeather", "-------  List的onItemClick事件中，currentLevel当前值为：" + currentLevel + "--------");
                 if(currentLevel == LEVEL_PROVINCE) {
                     selectedProvince = provinceList.get(i);
                     queryCities();
                 } else if(currentLevel == LEVEL_CITY) {
                     selectedCity = cityList.get(i);
+                    Log.e("CatiWeather", "-------  选择的城市是：" + selectedCity.getCityName() + "--------");
                     queryCounties();
+                } else if(currentLevel == LEVEL_COUNTY) {
+                    Log.e("CatiWeather", "-------  选择的县是：" + dataList.get(i)+ "--------");
                 }
             }
         });

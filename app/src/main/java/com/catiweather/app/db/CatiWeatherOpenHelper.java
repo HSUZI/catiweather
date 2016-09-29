@@ -30,10 +30,10 @@ public class CatiWeatherOpenHelper extends SQLiteOpenHelper{
     /**
      * Country表建表语句
      * */
-    public static final String  CREATE_COUNTRY = "create table County ("
+    public static final String  CREATE_COUNTY = "create table County ("
             + "id integer primary key autoincrement, "
-            + "country_name text, "
-            + "country_code text, "
+            + "county_name text, "
+            + "county_code text, "
             + "city_id integer)";
 
     public CatiWeatherOpenHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
@@ -45,7 +45,7 @@ public class CatiWeatherOpenHelper extends SQLiteOpenHelper{
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL(CREATE_PROVINCE); //创建Province表
         sqLiteDatabase.execSQL(CREATE_CITY); //创建City表
-        sqLiteDatabase.execSQL(CREATE_COUNTRY); //创建Country表
+        sqLiteDatabase.execSQL(CREATE_COUNTY); //创建County表
     }
 
     @Override
