@@ -22,6 +22,7 @@ import com.catiweather.app.db.CatiWeatherDB;
 import com.catiweather.app.model.City;
 import com.catiweather.app.model.County;
 import com.catiweather.app.model.Province;
+import com.catiweather.app.tools.Utils;
 import com.catiweather.app.utils.HttpCallbackListener;
 import com.catiweather.app.utils.HttpUtil;
 import com.catiweather.app.utils.Utility;
@@ -80,6 +81,8 @@ public class ChooseAreaActivity extends AppCompatActivity {
                     queryCounties();
                 } else if(currentLevel == LEVEL_COUNTY) {
                     Log.e("CatiWeather", "-------  选择的县是：" + dataList.get(i)+ "--------");
+                    Utils.print("------- 选择的县代码为：" + provinceList.get(i).getProvinceCode() + "  "
+                            + cityList.get(i).getCityCode() + "  " + countyList.get(i).getCountyCode() + "-------");
                 }
             }
         });
